@@ -152,116 +152,118 @@ function App(props) {
   return (
     <div className="App">
       <h1 className="header">Resume Editor</h1>
-      <div className="sidebar">
-        <ContactInfo
-          firstName={firstName}
-          lastName={lastName}
-          streetAddress={streetAddress}
-          handleSubmit={handleSubmit}
-          setFirstName={setFirstName}
-          setLastName={setLastName}
-          setStreetAdress={setStreetAddress}
-          city={city}
-          setCity={setCity}
-          state={state}
-          zip={zip}
-          email={email}
-          setState={setState}
-          setZip={setZip}
-          setEmail={setEmail}
-          phone={phone}
-          setPhone={setPhone}
-          contactSubmit={contactSubmit}
-          toggleContact={toggleContact}
-        />
-        <Education 
-          educationSubmit={educationSubmit}
-          toggleEducation={toggleEducation}
-          handleEducationSubmit={handleEducationSubmit}
-          schoolName={schoolName}
-          setSchoolName={setSchoolName}
-          fieldOfStudy={fieldOfStudy}
-          setFieldOfStudy={setFieldOfStudy}
-          startDate={startDate}
-          setStartDate={setStartDate}
-          completeDate={completeDate}
-          setCompleteDate={setCompleteDate}
-        />
-        <Experience
-           experienceSubmit={experienceSubmit}
-           toggleExperience={toggleExperience}
-           handleExperienceSubmit={handleExperiencSubmit}
-           companyName={companyName}
-           setCompanyName={setCompanyName}
-           positionTitle={positionTitle}
-           setPositionTitle={setPositionTitle}
-           startExperienceDate={startExperienceDate}
-           setStartExperienceDate={setStartExperienceDate}
-           seperationDate={seperationDate}
-           setSeperationDate={setSeperationDate}
-        />
-      </div>
-      <div className="page">
-        <div className="pageHeader">
-          <div className="headerLeft">
-            <h3>{firstName}{' '}{lastName}</h3>
-            <h5>{streetAddress}</h5>
-            <h5>{city}{' '}{state}{' '}{zip}</h5>
-          </div>
-          <div className="headerRight">
-            <h5>{email}</h5>
-            <h5>{phone}</h5>
-          </div>
+      <div className="main">
+        <div className="sidebar">
+          <ContactInfo
+            firstName={firstName}
+            lastName={lastName}
+            streetAddress={streetAddress}
+            handleSubmit={handleSubmit}
+            setFirstName={setFirstName}
+            setLastName={setLastName}
+            setStreetAdress={setStreetAddress}
+            city={city}
+            setCity={setCity}
+            state={state}
+            zip={zip}
+            email={email}
+            setState={setState}
+            setZip={setZip}
+            setEmail={setEmail}
+            phone={phone}
+            setPhone={setPhone}
+            contactSubmit={contactSubmit}
+            toggleContact={toggleContact}
+          />
+          <Education 
+            educationSubmit={educationSubmit}
+            toggleEducation={toggleEducation}
+            handleEducationSubmit={handleEducationSubmit}
+            schoolName={schoolName}
+            setSchoolName={setSchoolName}
+            fieldOfStudy={fieldOfStudy}
+            setFieldOfStudy={setFieldOfStudy}
+            startDate={startDate}
+            setStartDate={setStartDate}
+            completeDate={completeDate}
+            setCompleteDate={setCompleteDate}
+          />
+          <Experience
+            experienceSubmit={experienceSubmit}
+            toggleExperience={toggleExperience}
+            handleExperienceSubmit={handleExperiencSubmit}
+            companyName={companyName}
+            setCompanyName={setCompanyName}
+            positionTitle={positionTitle}
+            setPositionTitle={setPositionTitle}
+            startExperienceDate={startExperienceDate}
+            setStartExperienceDate={setStartExperienceDate}
+            seperationDate={seperationDate}
+            setSeperationDate={setSeperationDate}
+          />
         </div>
-        <div className="educationSection">
-          <div className="wrapper">
-            <h3>Education: </h3>
-            <div className="eduInfo">
-              <p>{schoolName}</p>
-              <p>{fieldOfStudy}</p>
-              <p>{startDate}{' '}-{' '}{completeDate}</p>
+        <div className="page">
+          <div className="pageHeader">
+            <div className="headerLeft">
+              <h3>{firstName}{' '}{lastName}</h3>
+              <h5>{streetAddress}</h5>
+              <h5>{city}{' '}{state}{' '}{zip}</h5>
+            </div>
+            <div className="headerRight">
+              <h5>{email}</h5>
+              <h5>{phone}</h5>
             </div>
           </div>
-          <div className="wrapper">
-            <h3>Experience:</h3>
-            <div className="workHistory">
-              <ul>
-                {jobs.map((job) => (
-                  <li 
-                    key={job.id} 
-                    className="listItem"
-                  >
-                    {job.id === jobEditing ? (
-                      <EditExperienceCard 
+          <div className="educationSection">
+            <div className="wrapper">
+              <h3>Education: </h3>
+              <div className="eduInfo">
+                <p>{schoolName}</p>
+                <p>{fieldOfStudy}</p>
+                <p>{startDate}{' '}-{' '}{completeDate}</p>
+              </div>
+            </div>
+            <div className="wrapper">
+              <h3>Experience:</h3>
+              <div className="workHistory">
+                <ul>
+                  {jobs.map((job) => (
+                    <li 
+                      key={job.id} 
+                      className="listItem"
+                    >
+                      {job.id === jobEditing ? (
+                        <EditExperienceCard 
+                          job={job}
+                          setJobEditing={setJobEditing}
+                          delJob={delJob}
+                          editingCompanyName={editingCompanyName}
+                          editingPositionTitle={editingPositionTitle}
+                          editingStartExperienceDate={editingStartExperienceDate}
+                          editingSeperationDate={editingSeperationDate}
+                          setEditingCompanyName={setEditingCompanyName}
+                          setEditingPositionTitle={setEditingPositionTitle}
+                          setEditingStartExperienceDate={setEditingStartExperienceDate}
+                          setEditingSeperationDate={setEditingSeperationDate}
+                          submitEdits={submitEdits}
+                        />
+                      ):(
+                      <ExperienceCard
                         job={job}
                         setJobEditing={setJobEditing}
+                        jobEditing={jobEditing}
                         delJob={delJob}
-                        editingCompanyName={editingCompanyName}
-                        editingPositionTitle={editingPositionTitle}
-                        editingStartExperienceDate={editingStartExperienceDate}
-                        editingSeperationDate={editingSeperationDate}
-                        setEditingCompanyName={setEditingCompanyName}
-                        setEditingPositionTitle={setEditingPositionTitle}
-                        setEditingStartExperienceDate={setEditingStartExperienceDate}
-                        setEditingSeperationDate={setEditingSeperationDate}
-                        submitEdits={submitEdits}
                       />
-                    ):(
-                     <ExperienceCard
-                      job={job}
-                      setJobEditing={setJobEditing}
-                      jobEditing={jobEditing}
-                      delJob={delJob}
-                     />
-                    )} 
-                  </li>
-                ))}
-              </ul>
+                      )} 
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
+        
         </div>
-       
-      </div>
+      </div>   
       <Footer />
     </div>
   );
