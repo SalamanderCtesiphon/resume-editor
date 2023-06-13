@@ -151,7 +151,11 @@ function App(props) {
 
   return (
     <div className="App">
-      <h1 className="header">Resume Editor</h1>
+      <div className="header">
+        <h1 >Resume Editor</h1>
+        <button id="nav-button">GitHub Repo</button>
+      </div>
+      
       <div className="main">
         <div className="sidebar">
           <ContactInfo
