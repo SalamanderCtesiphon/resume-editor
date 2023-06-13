@@ -1,4 +1,149 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
+.App {
+  text-align: center;
+  height: 120vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
+
+.contactForm, .educationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15vw;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.438);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px gray;
+  background-color: rgba(246, 241, 235, 0.734);
+}
+
+
+.contactInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  width: 5vw;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 21;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: rgba(177, 223, 130, 0.637);
+}
+
+.sidebar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 19;
+}
+
+.footer {
+  grid-row-start: 20;
+  grid-row-end: 21;
+  grid-column-start: 1;
+  grid-column-end: 21;
+  color: rgba(74, 72, 72, 0.432);
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+
+}
+
+.page {
+  border: 1px solid rgba(128, 128, 128, 0.438);
+  background-color: rgba(246, 241, 235, 0.734);
+  border-radius: 20px;
+  grid-column-start: 4;
+  grid-column-end: 21;
+  height: 110vh;
+  width: 50vw;
+  margin: 10px;
+  box-shadow: 10px 10px 20px gray;
+  overflow: scroll;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+input {
+  margin: 4px;
+}
+
+.wrapper {
+  margin: 20px;
+}
+
+.workHistory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.eduInfo {
+  margin: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+.jobCard {
+  border-bottom: 4px solid rgba(128, 128, 128, 0.427);
+  border-radius: 5px;
+  width: 45vw;
+  margin: 4px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btnBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.editCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid rgba(128, 128, 128, 0.427);
+  border-radius: 5px;
+  width: 45vw;
+  margin: 4px;
+  padding: 10px;
+}
+
+.editCardDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
