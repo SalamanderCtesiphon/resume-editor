@@ -2,8 +2,8 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  color: white;
-  background-color: black;
+  color: rgb(102, 255, 47);
+  
 }
 
 .App {
@@ -13,17 +13,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  background-image: url('./images/background-home-desktop.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .header {
-  padding: .5em 1em;
-  border-bottom: 1px solid gray;
+  padding: .25em 1em;
+  border-bottom: 2px solid rgb(151, 4, 255);
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.809);
+}
 
+#nav-button {
+  background-color: rgb(151, 4, 255);
+  color: black;
+  border: 1px solid rgb(102, 255, 47);
+  cursor: pointer;
+}
+
+#nav-button:hover {
+  background-color: rgb(102, 255, 47);
 }
 
 .main {
@@ -32,29 +46,90 @@
   padding: 0 2em;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 .contactForm, .educationForm, .page {
-  border: 1px solid gray;
-  padding: 1em;
-  margin: 1em;
-  background-color: rgb(51, 50, 50);
+  min-width: 12em;
+  border-radius: 1em;
+  padding: 0 .5em;
+  margin: .5em;
+
+  background-color: rgba(0, 0, 0, 0.678);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .contactInputs {
+  display: flex;
+  flex-direction: column;
 }
 
 button {
-
+  background-color: black;
+  margin: 1em;
+  padding: .25em 1em;
+  border-radius: .5em;
 }
 
 
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+}
+
+input {
+  background-color: black;
+  margin: .5em;
+  padding: .5em;
+  border-radius: 1em;
+}
+
+.page {
+  width: 50%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .5em;
+  padding: 1em;
+}
+
+
+.eduInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workHistory {
+  width: 100%;
+  margin: 1em;
+}
+
+.jobCard {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   
 }
+
 
 .footer {
   
@@ -62,29 +137,22 @@ button {
 }
 
 
-
-.pageHeader {
+a {
+  text-decoration: none;
 }
 
-input {
-  
+a:hover {
+  color: rgb(151, 4, 255);
 }
 
-.wrapper {
-}
 
-.workHistory {
-}
 
-.eduInfo {
-}
 
 li {
   list-style: none;
 }
 
-.jobCard {
-}
+
 
 .details {
 }
