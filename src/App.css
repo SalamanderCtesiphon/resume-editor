@@ -18,6 +18,13 @@
   background-size: cover;
 }
 
+@media (max-width: 730px) {
+  .App {
+    background-image: none;
+    background-color: black;
+  }
+}
+
 .header {
   padding: .25em 1em;
   border-bottom: 2px solid rgb(151, 4, 255);
